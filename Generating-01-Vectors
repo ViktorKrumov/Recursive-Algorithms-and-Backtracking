@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace InHome
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            var num = int.Parse(Console.ReadLine());
+            var arr = new int[num];
+            Loop(arr, 0);
+        }
+
+        private static void Loop(int[] num, int index)
+        {
+            if(index > num.Length - 1)
+            {
+                Console.WriteLine(string.Join("", num));
+                return;
+            }
+
+            for(int i = 0; i <= 1; i++)
+            {
+                num[index] = i;
+                Loop(num, index + 1);
+            }
+        }
+        
+        
+    }
+}
